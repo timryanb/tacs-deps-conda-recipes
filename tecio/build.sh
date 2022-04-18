@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd teciosrc
+cmake .
+make
+mv libtecio.a ${PREFIX}/lib

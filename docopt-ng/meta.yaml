@@ -1,0 +1,35 @@
+{% set name = "docopt-ng" %}
+{% set version = "0.7.2" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 86ceea032f0cfa59e60776eb0cf38ac73653581022872320f47dc874678d7244
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+  noarch: python
+
+requirements:
+  host:
+    - pip
+    - python
+  run:
+    - python
+
+about:
+  home: https://github.com/jazzband/docopt-ng
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE-MIT
+  summary: "Humane command line arguments parser. Now with maintenance, typehints, and complete test coverage."
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - your-github-id-here
