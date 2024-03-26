@@ -1,5 +1,10 @@
 {% set name = "pynastran" %}
-{% set version = "1.4.0" %}
+{% set tag = "v1.4.1" %}
+{% if tag.startswith('v') %}
+{% set version = tag[ 1: ] %}
+{% else %}
+{% set version = tag %}
+{% endif %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +12,7 @@ package:
 
 source:
   git_url: https://github.com/SteveDoyle2/pyNastran.git
-  git_rev: "{{ version }}"
+  git_rev: "{{ tag }}"
 
 build:
   number: 0
